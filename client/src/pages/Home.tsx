@@ -11,6 +11,8 @@ import {
   BriefcaseBusiness,
   Check,
   ChevronRight,
+  ChevronDown,
+  ChevronUp,
   CircleHelp,
   ClipboardCheck,
   Compass,
@@ -226,6 +228,12 @@ export default function Home() {
   const [showCallCard, setShowCallCard] = useState(false);
   const [activeCategoryFilter, setActiveCategoryFilter] = useState("All");
   const [categorySearch, setCategorySearch] = useState("");
+  const activeModuleIndex = Math.max(0, navItems.findIndex((item) => item.id === activeId));
+
+  const moveToModule = (direction: -1 | 1) => {
+    const nextIndex = Math.min(Math.max(activeModuleIndex + direction, 0), navItems.length - 1);
+    scrollToModule(navItems[nextIndex].id);
+  };
 
   const briefSlides = useMemo(
     () => [
@@ -286,6 +294,13 @@ export default function Home() {
         </nav>
         <div className="topbar-actions"><span className="topbar-status"><span />AUTHORIZED</span><button className="topbar-call-card" type="button" onClick={() => setShowCallCard(true)}>CALL CARD <ChevronRight size={14} /></button></div>
       </header>
+
+      <aside className="page-navigator" aria-label="Page section navigation">
+        <button type="button" onClick={() => moveToModule(-1)} disabled={activeModuleIndex === 0} aria-label="Previous training module"><ChevronUp size={18} /></button>
+        <span><strong>{String(activeModuleIndex + 1).padStart(2, "0")}</strong><small>/ {String(navItems.length).padStart(2, "0")}</small></span>
+        <button type="button" onClick={() => moveToModule(1)} disabled={activeModuleIndex === navItems.length - 1} aria-label="Next training module"><ChevronDown size={18} /></button>
+        <em>{navItems[activeModuleIndex].label}</em>
+      </aside>
 
         <main className="command-stage">
           <section id="overview" className="hero-module scroll-module" style={{ "--hero-image": `url(${commandHeroUrl})` } as CSSProperties}>

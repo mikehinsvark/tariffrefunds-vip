@@ -81,3 +81,5 @@ Use the supplied TRA mark as the primary wordmark. Its sharp diagonal slash and 
 - Category cards use a restrained sector-color system rather than a rainbow palette. They must read as data tiles: signal color first, category title second, supporting examples third.
 - Major modules carry an explicit next-module cue so the agent remains oriented through the full command-deck sequence.
 - Navigation lives across the top as an active-state module strip. The recovered canvas space belongs to the opportunity carousel, which should be the primary visual device in the hero rather than a secondary panel.
+- Carousel artwork is display-first: it must use `contain` within its 16:9 stage so the supplied visual story is fully visible, never cropped at the top.
+- The category explorer uses vertically structured operational cards with distinct code, sector signal, title, concise examples, and one direct next action. A floating module navigator provides previous/next travel through the page.

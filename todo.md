@@ -16,3 +16,7 @@
 - [x] Move the desktop training index from a left rail into a clear active-state top navigation bar.
 - [x] Reallocate the hero width to enlarge the supplied opportunity carousel.
 - [x] Confirm desktop and mobile navigation behavior after the layout conversion.
+- [x] Show the supplied carousel artwork in full without top-edge cropping.
+- [x] Rebuild the 18-category cards for readable, balanced operational scanning.
+- [x] Add a persistent up/down page navigator for module-to-module travel.
+- [x] Confirm the application source contains no visible platform attribution and verify the corrected experience on desktop and mobile.
