@@ -1,0 +1,7 @@
+./
+./LIVE_SITE_NOTES.md
+./overview-reference.webp
+./business-script-reference.webp
+./roleplay-reference.webp
+./live-site-content.md
+./REBUILD_BRIEF.md
