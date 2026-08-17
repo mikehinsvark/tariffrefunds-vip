@@ -13,3 +13,6 @@
 - [x] Expand the prospecting guide to all 18 supplied priority categories with colored glow-on-hover cards.
 - [x] Create, validate, and package a reusable skill for this agent-training portal workflow.
 - [x] Recheck responsive behavior and save a refinement checkpoint.
+- [x] Move the desktop training index from a left rail into a clear active-state top navigation bar.
+- [x] Reallocate the hero width to enlarge the supplied opportunity carousel.
+- [x] Confirm desktop and mobile navigation behavior after the layout conversion.

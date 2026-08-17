@@ -272,19 +272,20 @@ export default function Home() {
   }, []);
 
   return (
-    <SidebarProvider defaultOpen style={{ "--sidebar-width": "19rem" } as CSSProperties}>
-      <CommandSidebar activeId={activeId} />
-      <SidebarInset className="bg-[#061725] text-white">
-        <header className="mobile-topbar">
-          <div className="flex items-center gap-3">
-            <SidebarTrigger className="text-[#dceef5] hover:bg-white/8 hover:text-white" />
-            <a href="#overview" className="brand-lockup compact-brand">
-              <img src={commandMarkUrl} alt="" className="brand-mark" />
-              <span><strong>Tariff Refund</strong><em>AGENT TRAINING</em></span>
-            </a>
-          </div>
-          <span className="topbar-status"><span />AUTHORIZED</span>
-        </header>
+    <div className="top-nav-shell bg-[#061725] text-white">
+      <header className="command-topbar">
+        <a href="#overview" className="brand-lockup topbar-brand" aria-label="Tariff Refund Agency agent training home">
+          <img src={commandMarkUrl} alt="" className="brand-mark" />
+          <span><strong>Tariff Refund</strong><em>AGENT TRAINING</em></span>
+        </a>
+        <nav className="module-topnav" aria-label="Training modules">
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            return <a key={item.id} href={`#${item.id}`} aria-current={activeId === item.id ? "page" : undefined} className={activeId === item.id ? "active" : ""}><Icon size={13} /><span>{item.label}</span></a>;
+          })}
+        </nav>
+        <div className="topbar-actions"><span className="topbar-status"><span />AUTHORIZED</span><button className="topbar-call-card" type="button" onClick={() => setShowCallCard(true)}>CALL CARD <ChevronRight size={14} /></button></div>
+      </header>
 
         <main className="command-stage">
           <section id="overview" className="hero-module scroll-module" style={{ "--hero-image": `url(${commandHeroUrl})` } as CSSProperties}>
@@ -389,7 +390,6 @@ export default function Home() {
         </main>
 
         {showCallCard && <div className="callcard-scrim" role="presentation" onClick={() => setShowCallCard(false)}><aside className="call-card" role="dialog" aria-modal="true" aria-labelledby="call-card-title" onClick={(event) => event.stopPropagation()}><button type="button" className="close-card" onClick={() => setShowCallCard(false)} aria-label="Close call card">×</button><div className="eyebrow gold-eyebrow"><span /> QUICK CALL CARD</div><h2 id="call-card-title">Ask for the right owner.</h2><p className="call-card-prompt">“Would you be the right person to ask about import operations, or is there someone who oversees customs documentation and inbound purchasing?”</p><CopyCard text="Would you be the right person to ask about import operations, or is there someone who oversees customs documentation and inbound purchasing?" label="call card question" /><div className="call-card-checks"><span><Check size={15} /> Do not determine eligibility</span><span><Check size={15} /> Do not quote results or timing</span><span><Check size={15} /> Escalate program-specific questions</span></div><button type="button" className="signal-button full-width" onClick={() => { setShowCallCard(false); scrollToModule("qualifier"); }}>Open qualifier <ArrowDownRight size={18} /></button></aside></div>}
-      </SidebarInset>
-    </SidebarProvider>
+    </div>
   );
 }

@@ -80,3 +80,4 @@ Use the supplied TRA mark as the primary wordmark. Its sharp diagonal slash and 
 - TRA slash-and-shield geometry is now the persistent movement and protection motif in rail markers, progress rails, section status cues, and category card edges.
 - Category cards use a restrained sector-color system rather than a rainbow palette. They must read as data tiles: signal color first, category title second, supporting examples third.
 - Major modules carry an explicit next-module cue so the agent remains oriented through the full command-deck sequence.
+- Navigation lives across the top as an active-state module strip. The recovered canvas space belongs to the opportunity carousel, which should be the primary visual device in the hero rather than a secondary panel.
