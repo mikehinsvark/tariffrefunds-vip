@@ -20,3 +20,7 @@
 - [x] Rebuild the 18-category cards for readable, balanced operational scanning.
 - [x] Add a persistent up/down page navigator for module-to-module travel.
 - [x] Confirm the application source contains no visible platform attribution and verify the corrected experience on desktop and mobile.
+- [x] Extract the supplied field-guide, broker-script, and homepage content into a reviewed internal curriculum.
+- [x] Replace section-only navigation with routed multi-page training navigation.
+- [x] Build dedicated field-guide, broker-script, objection, qualifier, and category pages using restored source material.
+- [x] Verify all linked pages and responsive layouts before saving the multi-page release.

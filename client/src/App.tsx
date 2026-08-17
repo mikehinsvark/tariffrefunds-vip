@@ -6,9 +6,14 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import FieldGuide from "./pages/FieldGuide";
+import BrokerScript from "./pages/BrokerScript";
+import Categories from "./pages/Categories";
+import Qualifier from "./pages/Qualifier";
+import Objections from "./pages/Objections";
 
 function Router() {
-  return <Switch><Route path="/" component={Home} /><Route path="/404" component={NotFound} /><Route component={NotFound} /></Switch>;
+  return <Switch><Route path="/" component={Home} /><Route path="/field-guide" component={FieldGuide} /><Route path="/broker-script" component={BrokerScript} /><Route path="/categories" component={Categories} /><Route path="/qualifier" component={Qualifier} /><Route path="/objections" component={Objections} /><Route path="/404" component={NotFound} /><Route component={NotFound} /></Switch>;
 }
 
 export default function App() {
