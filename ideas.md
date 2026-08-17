@@ -75,3 +75,8 @@ Use the supplied TRA mark as the primary wordmark. Its sharp diagonal slash and 
 - Recovery Gold `#F4B41A` is the primary advancement color for active modules, confirmed next steps, and main calls to action; teal is reserved for diagnostic signals and qualification markers.
 - The TRA slash-and-shield geometry is repeated in progress bars, active navigation, action controls, and card edges as the academy’s directional, protected-process motif.
 - Trade operations, customs evidence, secure review, documentation, ports, freight, and specialist handoff environments are the preferred imagery world; generic meeting scenes must be operationally framed.
+- The hero is intentionally compact and image-led. Its headline remains decisive but cannot consume the full first viewport; the supplied opportunity carousel acts as the visual mission brief.
+- The complete 18-category research area is a color-coded prospecting system. Every card uses a category-specific signal color and gains a controlled glow, lift, and edge accent on hover.
+- TRA slash-and-shield geometry is now the persistent movement and protection motif in rail markers, progress rails, section status cues, and category card edges.
+- Category cards use a restrained sector-color system rather than a rainbow palette. They must read as data tiles: signal color first, category title second, supporting examples third.
+- Major modules carry an explicit next-module cue so the agent remains oriented through the full command-deck sequence.

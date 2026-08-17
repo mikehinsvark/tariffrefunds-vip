@@ -29,6 +29,7 @@ import {
   UsersRound,
 } from "lucide-react";
 import {
+  type CarouselApi,
   Carousel,
   CarouselContent,
   CarouselItem,
@@ -58,6 +59,14 @@ const commandHeroUrl = "/manus-storage/tra-command-hero_83c20d99.png";
 const qualificationVisualUrl = "/manus-storage/tra-qualification-visual_35bbe34e.png";
 const scriptPracticeUrl = "/manus-storage/tra-script-practice_4c640a69.png";
 const roleplayRoomUrl = "/manus-storage/tra-roleplay-room_07bb8352.png";
+const opportunityCarouselImages = [
+  "/manus-storage/01-hidden-refund-opportunity_22331b64.png",
+  "/manus-storage/02-import-data-intelligence_7701c197.png",
+  "/manus-storage/03-organized-recovery-process_66849247.png",
+  "/manus-storage/04-working-capital_1841dbd7.png",
+  "/manus-storage/05-referral-partner-opportunity_4c38886c.png",
+  "/manus-storage/06-step-into-the-opportunity_c41cf05c.png",
+];
 
 const navItems = [
   { id: "overview", label: "Overview", icon: Compass, kicker: "01" },
@@ -115,13 +124,27 @@ const businessSteps = [
   },
 ];
 
+const categoryFilters = ["All", "Technology", "Industrial", "Transportation", "Health", "Commerce", "Consumer", "Food"];
+
 const categories = [
-  ["Industrial & components", "Recurring inbound parts, equipment, or machinery purchases."],
-  ["Consumer products", "Imported finished goods with an operations or supply-chain owner."],
-  ["Specialty retail", "Multi-SKU businesses that work closely with procurement partners."],
-  ["Manufacturing", "Organizations coordinating imported inputs or production equipment."],
-  ["Automotive supply", "Parts-focused operations with established freight and trade workflows."],
-  ["Technology hardware", "Teams managing physical product imports and purchasing operations."],
+  { code: "ET", sector: "Technology", title: "Electronics & Technology", copy: "Computers, servers, telecom equipment, components, circuit boards and security systems.", tone: "#3EE2D0" },
+  { code: "MI", sector: "Industrial", title: "Machinery & Industrial Equipment", copy: "Manufacturing machinery, pumps, motors, tools, generators, robotics and replacement parts.", tone: "#F4B41A" },
+  { code: "AT", sector: "Transportation", title: "Automotive & Transportation", copy: "Vehicles, tires, batteries, aftermarket parts, truck parts and accessories.", tone: "#7BA7FF" },
+  { code: "CP", sector: "Health", title: "Chemical & Pharmaceutical", copy: "Pharmaceuticals, supplements, cosmetic ingredients, industrial chemicals and cleaners.", tone: "#BB90E7" },
+  { code: "WD", sector: "Commerce", title: "Wholesale Distributors", copy: "Finished goods, components and inventory distributed to retailers, manufacturers and contractors.", tone: "#E99B68" },
+  { code: "RE", sector: "Commerce", title: "Retail & E-commerce Brands", copy: "Private-label products, household goods, electronics, toys and general merchandise.", tone: "#E99B68" },
+  { code: "AF", sector: "Consumer", title: "Apparel, Footwear & Textiles", copy: "Clothing, uniforms, shoes, fabric, linens, handbags and accessories.", tone: "#E78F8F" },
+  { code: "FH", sector: "Consumer", title: "Furniture & Home Furnishings", copy: "Furniture, cabinets, mattresses, lighting, flooring and decor.", tone: "#E78F8F" },
+  { code: "CB", sector: "Industrial", title: "Construction & Building Materials", copy: "Tile, stone, lumber products, fixtures, hardware, glass, plumbing and electrical products.", tone: "#F4CB6C" },
+  { code: "FB", sector: "Food", title: "Food & Beverage Importers", copy: "Produce, seafood, coffee, wine, spirits, packaged foods and restaurant supplies.", tone: "#8FCE7B" },
+  { code: "MD", sector: "Health", title: "Medical & Dental Suppliers", copy: "Medical devices, diagnostics, dental equipment, disposables and PPE.", tone: "#BB90E7" },
+  { code: "PP", sector: "Industrial", title: "Plastics & Packaging", copy: "Plastic products, containers, film, bottles, packaging materials and resins.", tone: "#B49AFF" },
+  { code: "MF", sector: "Industrial", title: "Metals & Fabricated Products", copy: "Steel products, aluminum products, fasteners, castings, wire and fabricated components.", tone: "#A9B9C9" },
+  { code: "RE", sector: "Technology", title: "Renewable Energy & Electrical", copy: "Solar equipment, batteries, inverters, chargers and electrical components.", tone: "#3EE2D0" },
+  { code: "SG", sector: "Consumer", title: "Sporting Goods, Toys & Recreation", copy: "Fitness equipment, bicycles, toys, outdoor equipment and sporting goods.", tone: "#E78F8F" },
+  { code: "BJ", sector: "Consumer", title: "Beauty, Jewelry & Luxury Goods", copy: "Cosmetics, skincare, watches, jewelry, handbags and accessories.", tone: "#E78F8F" },
+  { code: "AG", sector: "Food", title: "Agriculture & Farm Supply", copy: "Fertilizer, equipment, irrigation systems, greenhouse products and packaging.", tone: "#8FCE7B" },
+  { code: "HR", sector: "Food", title: "Hospitality & Restaurant Suppliers", copy: "Commercial kitchen equipment, furniture, linens, tableware and food products.", tone: "#8FCE7B" },
 ];
 
 function scrollToModule(id: string) {
@@ -199,16 +222,37 @@ function CommandSidebar({ activeId }: { activeId: string }) {
 export default function Home() {
   const [activeId, setActiveId] = useState("overview");
   const [currentBrief, setCurrentBrief] = useState(0);
+  const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [showCallCard, setShowCallCard] = useState(false);
+  const [activeCategoryFilter, setActiveCategoryFilter] = useState("All");
+  const [categorySearch, setCategorySearch] = useState("");
 
   const briefSlides = useMemo(
     () => [
-      { eyebrow: "Qualification signal", title: "Start with the importer role.", copy: "The most useful first question establishes whether the business manages its own import documentation.", icon: Target },
-      { eyebrow: "Conversation map", title: "Discover before you describe.", copy: "Use a compact sequence: role, process, responsible contact, and the safest next action.", icon: Compass },
-      { eyebrow: "Safety boundary", title: "Never decide the outcome.", copy: "Approved professionals evaluate current program details. Your job is a clean, respectful handoff.", icon: ShieldCheck },
+      { eyebrow: "Opportunity awareness", title: "Start with the import process.", copy: "Lead with responsible discovery and establish whether the business owns its import workflow.", icon: Target, image: opportunityCarouselImages[0] },
+      { eyebrow: "Data intelligence", title: "Turn detail into direction.", copy: "Use operational questions to locate the right contact and the safest next conversation.", icon: SearchCheck, image: opportunityCarouselImages[1] },
+      { eyebrow: "Process clarity", title: "Make the handoff organized.", copy: "Set clear expectations for the next step without deciding eligibility, terms, or outcomes.", icon: ClipboardCheck, image: opportunityCarouselImages[2] },
+      { eyebrow: "Working capital", title: "Keep claims out of the call.", copy: "When value, timing, funding, or legal treatment comes up, route it to approved specialists.", icon: ShieldCheck, image: opportunityCarouselImages[3] },
+      { eyebrow: "Partner pathway", title: "Build the right introduction.", copy: "Protect the relationship, clarify the collaboration, and hand off only through approved channels.", icon: UsersRound, image: opportunityCarouselImages[4] },
+      { eyebrow: "Agent action", title: "Step into the right next move.", copy: "Use the field guide, choose the appropriate talk track, and document the requested follow-up.", icon: ArrowDownRight, image: opportunityCarouselImages[5] },
     ],
     []
   );
+
+  const visibleCategories = useMemo(() => {
+    const query = categorySearch.trim().toLowerCase();
+    return categories.filter((category) => {
+      const matchesFilter = activeCategoryFilter === "All" || category.sector === activeCategoryFilter;
+      const haystack = `${category.title} ${category.copy} ${category.sector}`.toLowerCase();
+      return matchesFilter && (!query || haystack.includes(query));
+    });
+  }, [activeCategoryFilter, categorySearch]);
+
+  useEffect(() => {
+    if (!carouselApi) return;
+    const interval = window.setInterval(() => carouselApi.scrollNext(), 6500);
+    return () => window.clearInterval(interval);
+  }, [carouselApi]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -261,7 +305,7 @@ export default function Home() {
 
             <div className="brief-stage">
               <div className="brief-stage-grid" />
-              <Carousel opts={{ loop: true }} setApi={(api) => api?.on("select", () => setCurrentBrief(api.selectedScrollSnap()))} className="brief-carousel">
+              <Carousel opts={{ loop: true }} setApi={(api) => { setCarouselApi(api); api?.on("select", () => setCurrentBrief(api.selectedScrollSnap())); }} className="brief-carousel">
                 <CarouselContent>
                   {briefSlides.map((brief, index) => {
                     const Icon = brief.icon;
@@ -269,9 +313,8 @@ export default function Home() {
                       <CarouselItem key={brief.title}>
                         <article className="brief-card">
                           <div className="brief-card-top"><span><i /> {brief.eyebrow}</span><b>0{index + 1}</b></div>
-                          <div className="signal-orbit" aria-hidden="true"><span className="orbit-dot dot-one" /><span className="orbit-dot dot-two" /><div className="signal-core"><Icon size={33} /><small>THE FOCUS</small></div></div>
-                          <h2>{brief.title}</h2>
-                          <p>{brief.copy}</p>
+                          <div className="brief-image"><img src={brief.image} alt="" /><div className="brief-image-scrim" /><div className="brief-image-icon"><Icon size={24} /></div></div>
+                          <div className="brief-card-copy"><h2>{brief.title}</h2><p>{brief.copy}</p></div>
                           <div className="brief-progress"><span style={{ width: `${((index + 1) / briefSlides.length) * 100}%` }} /></div>
                         </article>
                       </CarouselItem>
@@ -280,7 +323,7 @@ export default function Home() {
                 </CarouselContent>
                 <div className="carousel-controls">
                   <CarouselPrevious className="brief-arrow border-[#23506b] bg-[#0a273a] text-white hover:bg-[#10354b]" />
-                  <span>{String(currentBrief + 1).padStart(2, "0")} / 03</span>
+                  <span>{String(currentBrief + 1).padStart(2, "0")} / {String(briefSlides.length).padStart(2, "0")}</span>
                   <CarouselNext className="brief-arrow border-[#23506b] bg-[#0a273a] text-white hover:bg-[#10354b]" />
                 </div>
               </Carousel>
@@ -320,8 +363,10 @@ export default function Home() {
           </section>
 
           <section id="categories" className="categories-module scroll-module">
-            <div className="section-heading split-heading"><div><div className="eyebrow teal-eyebrow"><span /> 05 / RESEARCH CATEGORIES</div><h2>Build a relevant prospecting map.</h2></div><p>Use category cues to prioritize research. They are conversation starters, not proof of status or eligibility.</p></div>
-            <div className="category-grid">{categories.map(([title, copy], index) => <article className="category-card" key={title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{copy}</p><button onClick={() => scrollToModule("qualifier")} type="button">View questions <ArrowUpRight size={16} /></button></article>)}</div>
+            <div className="section-heading split-heading"><div><div className="eyebrow teal-eyebrow"><span /> 05 / RESEARCH CATEGORIES</div><h2>18 priority business categories.</h2></div><p>Search by product or narrow the field by vertical. These are prospecting guides—not final eligibility determinations.</p></div>
+            <div className="category-tools"><label className="category-search"><SearchCheck size={17} /><input type="search" value={categorySearch} onChange={(event) => setCategorySearch(event.target.value)} placeholder="Search products or categories..." aria-label="Search priority business categories" /></label><div className="category-filters" role="group" aria-label="Filter priority categories">{categoryFilters.map((filter) => <button key={filter} type="button" className={activeCategoryFilter === filter ? "active" : ""} onClick={() => setActiveCategoryFilter(filter)}>{filter}</button>)}</div></div>
+            <div className="category-grid">{visibleCategories.map((category) => <article className="category-card" style={{ "--category-color": category.tone } as CSSProperties} key={category.title}><div className="category-topline"><span className="category-code">{category.code}</span><small>{String(categories.indexOf(category) + 1).padStart(2, "0")}</small></div><em>{category.sector}</em><h3>{category.title}</h3><p>{category.copy}</p><button onClick={() => scrollToModule("qualifier")} type="button">Use qualifier <ArrowUpRight size={16} /></button></article>)}</div>
+            {visibleCategories.length === 0 && <div className="category-empty"><SearchCheck size={22} /><p>No category matches that search. Try a product, vertical, or broader phrase.</p></div>}
           </section>
 
           <section id="qualifier" className="qualifier-module scroll-module">
