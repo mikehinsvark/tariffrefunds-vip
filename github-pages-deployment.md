@@ -10,6 +10,6 @@
 
 **Route behavior:** The static deployment includes a `404.html` redirect bridge and startup route restoration. Direct URL requests such as `/business-script` and `/comp-plan` load the intended client route rather than leaving users at a GitHub Pages error screen.
 
-**Asset portability:** The public build carries the logo, wordmark, and overview image under `client/public/assets/`; `VITE_STATIC_EXPORT=true` switches the application to those static paths for GitHub Pages while the Manus workspace can continue using its managed asset paths.
+**Asset portability:** The smaller wordmark remains in `client/public/assets/`. The large logo and overview image are versioned GitHub Release assets under `static-assets-v1`; `VITE_STATIC_EXPORT=true` switches the application to those portable URLs while the Manus workspace continues using its managed asset paths.
 
 **Validation completed:** The GitHub Actions build and deploy workflow completed successfully; the HTTPS custom domain loaded the `/comp-plan` route and its controlled internal-reference content.
