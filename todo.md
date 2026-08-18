@@ -44,3 +44,6 @@
 - [x] Replace the first Comp Plan section with an image-only 01 / Comp Plan panel.
 - [x] Remove the internal-reference status and the three requested supporting cards.
 - [x] Verify the streamlined Comp Plan page on desktop and mobile, then publish the update.
+- [x] Replace the shared TRA footer mark with a DBR footer treatment.
+- [x] Add relevant Dreams Business Resources resource links and a clean return-to-top control.
+- [x] Verify the shared footer and external links on desktop and mobile before publishing.
