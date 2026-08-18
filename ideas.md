@@ -83,3 +83,7 @@ Use the supplied TRA mark as the primary wordmark. Its sharp diagonal slash and 
 - Navigation lives across the top as an active-state module strip. The recovered canvas space belongs to the opportunity carousel, which should be the primary visual device in the hero rather than a secondary panel.
 - Carousel artwork is display-first: it must use `contain` within its 16:9 stage so the supplied visual story is fully visible, never cropped at the top.
 - The category explorer uses vertically structured operational cards with distinct code, sector signal, title, concise examples, and one direct next action. A floating module navigator provides previous/next travel through the page.
+- Every major training module must carry a visible module-status label, protected-process marker, and a clear next-resource or escalation action so routed pages read as one controlled mission path.
+- The TRA slash-and-shield geometry must appear in section rails, evidence-panel edges, progress readouts, and active controls; a folded gold card corner alone is not sufficient.
+- Pale sections remain secure internal evidence surfaces through subtle ledger grids, technical borders, operational metadata, and stronger hierarchy between guidance, approved wording, warnings, and controlled references.
+- Calculator and compensation pages should read as monitored reference instruments: controlled inputs first, plan values second, assumptions third, and escalation instructions always visible.

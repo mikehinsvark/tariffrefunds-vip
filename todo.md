@@ -24,3 +24,11 @@
 - [x] Replace section-only navigation with routed multi-page training navigation.
 - [x] Build dedicated field-guide, broker-script, objection, qualifier, and category pages using restored source material.
 - [x] Verify all linked pages and responsive layouts before saving the multi-page release.
+- [x] Audit the supplied Tariff Calculator and Tariff Hub sites and handoffs against the current internal training pages.
+- [x] Document what content is already represented and identify high-value training gaps.
+- [x] Add approved missing calculator, research, and workflow content as routed training modules where useful.
+- [x] Verify the updated curriculum, navigation, and responsive experience before release.
+- [x] Create a dedicated business-owner script page with approved discovery, positioning, and handoff language.
+- [x] Create a contact-research page for account mapping, role identification, approved research sources, and CRM-ready preparation.
+- [x] Create a clearly versioned Comp Plan & Calculator Reference page with controlled internal assumptions and disclosures.
+- [x] Extend shared navigation and verify the new training routes on desktop and mobile.

@@ -11,9 +11,12 @@ import BrokerScript from "./pages/BrokerScript";
 import Categories from "./pages/Categories";
 import Qualifier from "./pages/Qualifier";
 import Objections from "./pages/Objections";
+import BusinessScript from "./pages/BusinessScript";
+import ContactResearch from "./pages/ContactResearch";
+import CompPlan from "./pages/CompPlan";
 
 function Router() {
-  return <Switch><Route path="/" component={Home} /><Route path="/field-guide" component={FieldGuide} /><Route path="/broker-script" component={BrokerScript} /><Route path="/categories" component={Categories} /><Route path="/qualifier" component={Qualifier} /><Route path="/objections" component={Objections} /><Route path="/404" component={NotFound} /><Route component={NotFound} /></Switch>;
+  return <Switch><Route path="/" component={Home} /><Route path="/field-guide" component={FieldGuide} /><Route path="/broker-script" component={BrokerScript} /><Route path="/categories" component={Categories} /><Route path="/qualifier" component={Qualifier} /><Route path="/objections" component={Objections} /><Route path="/business-script" component={BusinessScript} /><Route path="/contact-research" component={ContactResearch} /><Route path="/comp-plan" component={CompPlan} /><Route path="/404" component={NotFound} /><Route component={NotFound} /></Switch>;
 }
 
 export default function App() {

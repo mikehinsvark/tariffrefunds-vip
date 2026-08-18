@@ -1,6 +1,6 @@
 /** Design reminder — shared Operations Command Deck shell for all internal training routes. */
 import { Link, useLocation } from "wouter";
-import { BookOpen, BriefcaseBusiness, CircleHelp, Compass, Network, SearchCheck, ShieldCheck } from "lucide-react";
+import { BookOpen, BriefcaseBusiness, Calculator, CircleHelp, Compass, ContactRound, MessageSquareText, Network, SearchCheck, ShieldCheck } from "lucide-react";
 import type { ReactNode } from "react";
 
 const navigation = [
@@ -10,6 +10,9 @@ const navigation = [
   { href: "/categories", label: "Categories", icon: Network },
   { href: "/qualifier", label: "Qualifier", icon: SearchCheck },
   { href: "/objections", label: "Objections", icon: CircleHelp },
+  { href: "/business-script", label: "Business script", icon: MessageSquareText },
+  { href: "/contact-research", label: "Contacts", icon: ContactRound },
+  { href: "/comp-plan", label: "Comp plan", icon: Calculator },
 ];
 
 export default function TrainingShell({ children, eyebrow = "INTERNAL AGENT TRAINING" }: { children: ReactNode; eyebrow?: string }) {
