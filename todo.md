@@ -36,3 +36,7 @@
 - [x] Add GitHub Pages build and SPA routing support without affecting the Manus deployment.
 - [x] Publish the source to GitHub and enable GitHub Pages.
 - [x] Assign tariffrefunds.vip, verify HTTPS and routed pages, and preserve the Manus URL as fallback.
+- [x] Inspect the current home-page card styling and hero carousel behavior in the portable deployment.
+- [x] Add controlled color accents, hover glow, and lift states to every training-page card.
+- [x] Restore automatic slide progression and working manual controls to the hero carousel.
+- [x] Verify card and carousel interactions on desktop and mobile, then publish the update to GitHub Pages.

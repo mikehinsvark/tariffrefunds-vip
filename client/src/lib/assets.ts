@@ -4,6 +4,12 @@ const githubReleaseAssets: Record<string, string> = {
   "01-hidden-refund-opportunity.png": "https://github.com/mikehinsvark/tariffrefunds-vip/releases/download/static-assets-v1/01-hidden-refund-opportunity.png",
 };
 
+const carouselReleaseBase = "https://github.com/mikehinsvark/tariffrefunds-vip/releases/download/static-assets-v1";
+
+export function carouselAssetUrl(exportedFile: string) {
+  return `${carouselReleaseBase}/${exportedFile}`;
+}
+
 export function assetUrl(storageFile: string, exportedFile: string) {
   return import.meta.env.VITE_STATIC_EXPORT === "true"
     ? githubReleaseAssets[exportedFile] ?? `/assets/${exportedFile}`

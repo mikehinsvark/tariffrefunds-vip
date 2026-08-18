@@ -87,3 +87,6 @@ Use the supplied TRA mark as the primary wordmark. Its sharp diagonal slash and 
 - The TRA slash-and-shield geometry must appear in section rails, evidence-panel edges, progress readouts, and active controls; a folded gold card corner alone is not sufficient.
 - Pale sections remain secure internal evidence surfaces through subtle ledger grids, technical borders, operational metadata, and stronger hierarchy between guidance, approved wording, warnings, and controlled references.
 - Calculator and compensation pages should read as monitored reference instruments: controlled inputs first, plan values second, assumptions third, and escalation instructions always visible.
+- Overview cards use the command palette first—Command Navy, paper white, fogged blue-gray, Recovery Gold, and teal diagnostics. Broader sector color is reserved for the category explorer, not the routed training index.
+- The overview is an indexed operational tile system: a visible module code, protected-process rail, direct resource action, and a controlled glow communicate state without becoming a consumer-product card catalogue.
+- Light canvas sections must retain secure-workspace authority through ledger grids, technical metadata, structural dividers, and repeated TRA slash-and-shield edges.
