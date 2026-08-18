@@ -16,7 +16,7 @@ const navigation = [
   { href: "/comp-plan", label: "Comp plan", icon: Calculator },
 ];
 
-export default function TrainingShell({ children, eyebrow = "INTERNAL AGENT TRAINING" }: { children: ReactNode; eyebrow?: string }) {
+export default function TrainingShell({ children, eyebrow = "INTERNAL AGENT TRAINING", showAlert = true, footerNote = "Internal agent training guidance only. Not legal, customs, tax, financial, or professional advice." }: { children: ReactNode; eyebrow?: string; showAlert?: boolean; footerNote?: string }) {
   const [location] = useLocation();
   const activeIndex = Math.max(0, navigation.findIndex((item) => item.href === location));
   const activePage = navigation[activeIndex];
@@ -28,9 +28,9 @@ export default function TrainingShell({ children, eyebrow = "INTERNAL AGENT TRAI
       </nav>
       <div className="academy-status"><span />AUTHORIZED</div>
     </header>
-    <div className="academy-alert"><ShieldCheck size={14} /> <span>{eyebrow}</span><b>Use current approved materials before discussing program, legal, tariff, timing, recovery, fee, or eligibility questions.</b></div>
+    {showAlert && <div className="academy-alert"><ShieldCheck size={14} /> <span>{eyebrow}</span><b>Use current approved materials before discussing program, legal, tariff, timing, recovery, fee, or eligibility questions.</b></div>}
     <aside className="academy-mission-rail" aria-label="Current training module"><span>MODULE</span><strong>{String(activeIndex + 1).padStart(2, "0")}<i>/ {String(navigation.length).padStart(2, "0")}</i></strong><em>{activePage.label}</em><div><b /></div></aside>
     {children}
-    <footer className="academy-footer"><img src={assetUrl("tra-wordmark-light_c3a94395.png", "tra-wordmark-light.png")} alt="Tariff Refund Agency" /><p>Internal agent training guidance only. Not legal, customs, tax, financial, or professional advice.</p><a href="#top">Back to top ↑</a></footer>
+    <footer className="academy-footer"><img src={assetUrl("tra-wordmark-light_c3a94395.png", "tra-wordmark-light.png")} alt="Tariff Refund Agency" /><p>{footerNote}</p><a href="#top">Back to top ↑</a></footer>
   </div>;
 }

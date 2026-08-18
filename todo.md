@@ -40,3 +40,7 @@
 - [x] Add controlled color accents, hover glow, and lift states to every training-page card.
 - [x] Restore automatic slide progression and working manual controls to the hero carousel.
 - [x] Verify card and carousel interactions on desktop and mobile, then publish the update to GitHub Pages.
+- [x] Prepare the supplied Dreams Tariff Refund Comp Plan image for the portable GitHub Pages deployment.
+- [x] Replace the first Comp Plan section with an image-only 01 / Comp Plan panel.
+- [x] Remove the internal-reference status and the three requested supporting cards.
+- [x] Verify the streamlined Comp Plan page on desktop and mobile, then publish the update.
