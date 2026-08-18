@@ -32,3 +32,7 @@
 - [x] Create a contact-research page for account mapping, role identification, approved research sources, and CRM-ready preparation.
 - [x] Create a clearly versioned Comp Plan & Calculator Reference page with controlled internal assumptions and disclosures.
 - [x] Extend shared navigation and verify the new training routes on desktop and mobile.
+- [ ] Assess the current build, GitHub repository availability, and tariffrefunds.vip DNS configuration.
+- [ ] Add GitHub Pages build and SPA routing support without affecting the Manus deployment.
+- [ ] Publish the source to a private GitHub repository and enable GitHub Pages.
+- [ ] Assign tariffrefunds.vip, verify HTTPS and routed pages, and preserve the Manus URL as fallback.

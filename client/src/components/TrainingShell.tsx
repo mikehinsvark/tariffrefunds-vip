@@ -2,6 +2,7 @@
 import { Link, useLocation } from "wouter";
 import { BookOpen, BriefcaseBusiness, Calculator, CircleHelp, Compass, ContactRound, MessageSquareText, Network, SearchCheck, ShieldCheck } from "lucide-react";
 import type { ReactNode } from "react";
+import { assetUrl } from "@/lib/assets";
 
 const navigation = [
   { href: "/", label: "Overview", icon: Compass },
@@ -21,7 +22,7 @@ export default function TrainingShell({ children, eyebrow = "INTERNAL AGENT TRAI
   const activePage = navigation[activeIndex];
   return <div className="academy-shell">
     <header className="academy-topbar">
-      <Link href="/" className="academy-brand" aria-label="Tariff Refund Agent Training home"><img src="/manus-storage/tra-command-mark_11084be6.png" alt="" /><span><strong>Tariff Refund</strong><em>AGENT TRAINING</em></span></Link>
+      <Link href="/" className="academy-brand" aria-label="Tariff Refund Agent Training home"><img src={assetUrl("tra-command-mark_11084be6.png", "tra-command-mark.png")} alt="" /><span><strong>Tariff Refund</strong><em>AGENT TRAINING</em></span></Link>
       <nav className="academy-nav" aria-label="Primary training navigation">
         {navigation.map((item) => { const Icon = item.icon; const active = location === item.href; return <Link href={item.href} key={item.href} className={active ? "active" : ""}><Icon size={14} /><span>{item.label}</span></Link>; })}
       </nav>
@@ -30,6 +31,6 @@ export default function TrainingShell({ children, eyebrow = "INTERNAL AGENT TRAI
     <div className="academy-alert"><ShieldCheck size={14} /> <span>{eyebrow}</span><b>Use current approved materials before discussing program, legal, tariff, timing, recovery, fee, or eligibility questions.</b></div>
     <aside className="academy-mission-rail" aria-label="Current training module"><span>MODULE</span><strong>{String(activeIndex + 1).padStart(2, "0")}<i>/ {String(navigation.length).padStart(2, "0")}</i></strong><em>{activePage.label}</em><div><b /></div></aside>
     {children}
-    <footer className="academy-footer"><img src="/manus-storage/tra-wordmark-light_c3a94395.png" alt="Tariff Refund Agency" /><p>Internal agent training guidance only. Not legal, customs, tax, financial, or professional advice.</p><a href="#top">Back to top ↑</a></footer>
+    <footer className="academy-footer"><img src={assetUrl("tra-wordmark-light_c3a94395.png", "tra-wordmark-light.png")} alt="Tariff Refund Agency" /><p>Internal agent training guidance only. Not legal, customs, tax, financial, or professional advice.</p><a href="#top">Back to top ↑</a></footer>
   </div>;
 }
