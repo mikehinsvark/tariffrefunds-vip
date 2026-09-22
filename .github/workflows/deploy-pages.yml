@@ -27,12 +27,28 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
+          cache-dependency-path: |
+            pnpm-lock.yaml
+            partner-app/pnpm-lock.yaml
       - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Install partner site dependencies
+        working-directory: partner-app
         run: pnpm install --frozen-lockfile
       - name: Build static site
         run: pnpm exec vite build
         env:
           VITE_STATIC_EXPORT: "true"
+      - name: Build partner landing page
+        working-directory: partner-app
+        run: pnpm exec vite build
+        env:
+          VITE_BASE_PATH: "/partner/"
+      - name: Add partner site to deployment
+        run: |
+          rm -rf dist/public/partner
+          mkdir -p dist/public/partner
+          cp -a partner-app/dist/public/. dist/public/partner/
       - name: Disable Jekyll
         run: touch dist/public/.nojekyll
       - name: Upload Pages artifact

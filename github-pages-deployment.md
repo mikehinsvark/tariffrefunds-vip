@@ -10,6 +10,8 @@
 
 **Route behavior:** The static deployment includes a `404.html` redirect bridge and startup route restoration. Direct URL requests such as `/business-script` and `/comp-plan` load the intended client route rather than leaving users at a GitHub Pages error screen.
 
-**Asset portability:** The smaller wordmark remains in `client/public/assets/`. The large logo and overview image are versioned GitHub Release assets under `static-assets-v1`; `VITE_STATIC_EXPORT=true` switches the application to those portable URLs while the Manus workspace continues using its managed asset paths.
+**Partner landing page:** The strategic-partnership experience is maintained as a self-contained Vite application in `partner-app/`. The deployment workflow builds it with `VITE_BASE_PATH=/partner/` and copies its static output into `dist/public/partner/`, publishing it at `https://tariffrefunds.vip/partner/` without changing the existing training routes.
 
-**Validation completed:** The GitHub Actions build and deploy workflow completed successfully; the HTTPS custom domain loaded the `/comp-plan` route and its controlled internal-reference content.
+**Asset portability:** The training site's smaller wordmark remains in `client/public/assets/`. Its large logo and overview image are versioned GitHub Release assets under `static-assets-v1`; `VITE_STATIC_EXPORT=true` switches the application to those portable URLs while the Manus workspace continues using its managed asset paths. The partner page's optimized artwork and narrated MP4 are stored in `partner-app/client/public/assets/` so the `/partner/` deployment has no dependency on Manus-managed storage.
+
+**Validation completed:** The root and partner TypeScript checks pass, both Vite applications build successfully, the combined deployment preserves the existing root site, and all `/partner/` images and the 67-second MP4 load from the expected nested URLs.
