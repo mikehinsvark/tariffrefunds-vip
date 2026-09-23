@@ -49,6 +49,11 @@ jobs:
           rm -rf dist/public/partner
           mkdir -p dist/public/partner
           cp -a partner-app/dist/public/. dist/public/partner/
+      - name: Add client site to deployment
+        run: |
+          rm -rf dist/public/client
+          mkdir -p dist/public/client
+          cp -a client-site/. dist/public/client/
       - name: Disable Jekyll
         run: touch dist/public/.nojekyll
       - name: Upload Pages artifact
